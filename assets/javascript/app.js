@@ -1,35 +1,38 @@
 var correct = 0;
 var incorrect = 0;
+var time = 30;
+var intervalID;
+var clockRunning = false;
 var questions = [
     {
         question : "What color is the sky?",
         answers:{
-                    a: "Purple",
-                    b: "Yellow",
-                    c: "Red",
-                    d: "Blue",
+                    a: " Purple ",
+                    b: " Yellow ",
+                    c: " Red ",
+                    d: " Blue ",
         },
-        correctAnswer : "d"
+        correctAnswer : "Blue"
     },
     {
         question : "What color is the grass?",
         answers:{
-                    a: "Purple",
-                    b: "Green",
-                    c: "Red",
-                    d: "Blue",
+                    a: " Purple ",
+                    b: " Green ",
+                    c: " Red ",
+                    d: " Blue ",
         },
-        correctAnswer : "b"
+        correctAnswer : "Green"
     },
     {
         question : "What color is an apple?",
         answers: {
-                    a: "Purple",
-                    b: "Yellow",
-                    c: "Red",
-                    d: "Blue",
+                    a: " Purple ",
+                    b: " Yellow ",
+                    c: " Red ",
+                    d: " Blue ",
         },
-        correctAnswer : "c"
+        correctAnswer : "Red"
     },
 ]
 
@@ -39,37 +42,59 @@ $("#start-button").on("click", startGame);
 function startGame() {
 
     console.log("Game Started")
-    
+    $(this).hide();
     function buildQuiz() {
-        
-        var output = [];
-    
-        
-        questions.forEach((currentQuestion, questionNumber) => {
-          
-          var answers = [];
-    
-          for (letter in currentQuestion.answers) {
+
+      setTimeout(endGame, 31000);
+      if(!clockRunning){
+        intervalID = setInterval(count, 1000);
+        clockRunning = true;
+      }else if(time == 0){
+        clockRunning = false;
+        endGame();
+      }
+      function count(){
+        $("#timer").text("Timer: " + time + " Seconds");
+        time--;
+      }
+      
+        for (var i =0; i < questions.length; i++){
+          console.log(questions.length);
+          var q = $("<div>");
+          q.text(questions[i].question);
+          $("#form").append(q);
+          for (var k=0; k<4; k++){
+            var a = $("<label>");
+            var letters = ["a", "b", "c", "d"];
+            a.append($('<input>', {
+              type: 'radio',
+              name: letters[i],
+              val: questions[i].answers[letters[k]],
+            }));
             
-            answers.push(
-              `<label>
-                <input type="radio" name="question${questionNumber}" value="${letter}">
-                ${letter} :
-                ${currentQuestion.answers[letter]}
-              </label>`
-            );
-          }
-    
-          
-          output.push(
-            `<div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join("")} </div>`
-          );
-        });
-    
+            a.append(questions[i].answers[letters[k]]);
+            a.append($("<br>"));
+            $("#form").append(a);
+          }      
+        }
+        var submit = ($('<input>', {
+          type: 'submit',
+          value: 'Submit',
+        }));
+        $("#form").append(submit);
+
+        $('input:radio').change(function(){
+          var value = $("form input[type='radio']:checked").val();
+          console.log("Value of Changed Radio is : " + value);
+          });
+
+        function endGame (){
+          var userSubmit = document.getElementsByTagName("form");
+          userSubmit[0].submit;
+          $("#game").text("Game Over");
+          $("#game").append("Score: ")
         
-        $("#quiz").html($("<div/>").text(output.join("")));
-        // quiz.innerHTML = output.join("");
+        }
       }
     buildQuiz();
   }

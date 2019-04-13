@@ -5,14 +5,14 @@ var intervalID;
 var clockRunning = false;
 var questions = [
     {
-        question : "What color is the sky?",
+        question : "What is Erin's first name?",
         answers:{
-                    a: " Purple ",
-                    b: " Yellow ",
-                    c: " Red ",
-                    d: " Blue ",
+                    a: " Emily ",
+                    b: " Kelly ",
+                    c: " Mariah ",
+                    d: " Amanda ",
         },
-        correctAnswer : "Blue"
+        correctAnswer : " Kelly "
     },
     {
         question : "What color is the grass?",
@@ -22,7 +22,7 @@ var questions = [
                     c: " Red ",
                     d: " Blue ",
         },
-        correctAnswer : "Green"
+        correctAnswer : " Green "
     },
     {
         question : "What color is an apple?",
@@ -32,7 +32,7 @@ var questions = [
                     c: " Red ",
                     d: " Blue ",
         },
-        correctAnswer : "Red"
+        correctAnswer : " Red "
     },
 ]
 
@@ -65,7 +65,7 @@ function startGame() {
           $("#form").append(q);
           for (var k=0; k<4; k++){
             var a = $("<label>");
-            var letters = ["a", "b", "c", "d"];
+            var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
             a.append($('<input>', {
               type: 'radio',
               name: letters[i],
@@ -87,22 +87,86 @@ function startGame() {
         submit.on("click", endGame);
 
         function endGame (){
-          var valueA = $("form input[name= 'a']:checked").val();
-          var valueb = $("form input[name= 'b']:checked").val();
-          var valueC = $("form input[name= 'c']:checked").val();
-          var valueD = $("form input[name= 'd']:checked").val();
-          if (valueA == " Blue "){
+
+          var valueQ1 = $("form input[name= 'a']:checked").val();
+          var valueQ2 = $("form input[name= 'b']:checked").val();
+          var valueQ3 = $("form input[name= 'c']:checked").val();
+          var valueQ4 = $("form input[name= 'd']:checked").val();
+          var valueQ5 = $("form input[name= 'e']:checked").val();
+          var valueQ6 = $("form input[name= 'f']:checked").val();
+          var valueQ7 = $("form input[name= 'g']:checked").val();
+          var valueQ8 = $("form input[name= 'h']:checked").val();
+          var valueQ9 = $("form input[name= 'i']:checked").val();
+          var valueQ10 = $("form input[name= 'j']:checked").val();
+          
+          if (valueQ1 == questions[0].correctAnswer){
             console.log("a is right");
             correct++
           } else{
             console.log("a is wrong");
             incorrect++
           }
-          if (valueb == " Green "){
+          if (valueQ2 == questions[1].correctAnswer){
             console.log("b is right");
             correct++
           } else {
             console.log("b is wrong");
+            incorrect++
+          }
+          if (valueQ3 == questions[2].correctAnswer){
+            console.log("a is right");
+            correct++
+          } else{
+            console.log("a is wrong");
+            incorrect++
+          }
+          if (valueQ4 == questions[3].correctAnswer){
+            console.log("a is right");
+            correct++
+          } else{
+            console.log("a is wrong");
+            incorrect++
+          }
+          if (valueQ5 == questions[4].correctAnswer){
+            console.log("a is right");
+            correct++
+          } else{
+            console.log("a is wrong");
+            incorrect++
+          }
+          if (valueQ6 == questions[5].correctAnswer){
+            console.log("a is right");
+            correct++
+          } else{
+            console.log("a is wrong");
+            incorrect++
+          }
+          if (valueQ7 == questions[6].correctAnswer){
+            console.log("a is right");
+            correct++
+          } else{
+            console.log("a is wrong");
+            incorrect++
+          }
+          if (valueQ8 == questions[7].correctAnswer){
+            console.log("a is right");
+            correct++
+          } else{
+            console.log("a is wrong");
+            incorrect++
+          }
+          if (valueQ9 == questions[8].correctAnswer){
+            console.log("a is right");
+            correct++
+          } else{
+            console.log("a is wrong");
+            incorrect++
+          }
+          if (valueQ10 == questions[9].correctAnswer){
+            console.log("a is right");
+            correct++
+          } else{
+            console.log("a is wrong");
             incorrect++
           }
           var userSubmit = document.getElementsByTagName("form");

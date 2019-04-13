@@ -83,17 +83,33 @@ function startGame() {
         }));
         $("#form").append(submit);
 
-        $('input:radio').change(function(){
-          var value = $("form input[type='radio']:checked").val();
-          console.log("Value of Changed Radio is : " + value);
-          });
+        
+        submit.on("click", endGame);
 
         function endGame (){
+          var valueA = $("form input[name= 'a']:checked").val();
+          var valueb = $("form input[name= 'b']:checked").val();
+          var valueC = $("form input[name= 'c']:checked").val();
+          var valueD = $("form input[name= 'd']:checked").val();
+          if (valueA == " Blue "){
+            console.log("a is right");
+            correct++
+          } else{
+            console.log("a is wrong");
+            incorrect++
+          }
+          if (valueb == " Green "){
+            console.log("b is right");
+            correct++
+          } else {
+            console.log("b is wrong");
+            incorrect++
+          }
           var userSubmit = document.getElementsByTagName("form");
           userSubmit[0].submit;
-          $("#game").text("Game Over");
-          $("#game").append("Score: ")
-        
+          $("#game").text("Game Over").append($("<br>"));
+          $("#game").append("Correct Score: " + correct).append($("<br>"));
+          $("#game").append("Incorrect Score: " + incorrect).append($("<br>"));
         }
       }
     buildQuiz();

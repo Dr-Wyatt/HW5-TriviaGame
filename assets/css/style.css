@@ -1,0 +1,30 @@
+.trivia-title {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+#MS-Bandana {
+    width: 250px;
+    height: 250px;
+}
+#Dwight {
+    height: 250px;
+    width: 200px;
+}
+#Office-Logo {
+    width: 550px;
+}
+.impact-font {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#MS-Disappoint {
+    height: 250px;
+    width: 275px;
+}
+#Jim-Halpert {
+    width: 250px;
+    height: 200px;
+}
+#MS-Hour {
+    width: 600px;
+    height: 300px;
+}

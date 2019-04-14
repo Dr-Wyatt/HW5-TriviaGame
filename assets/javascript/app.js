@@ -1,11 +1,11 @@
 var correct = 0;
 var incorrect = 0;
-var time = 30;
+var time = 90;
 var intervalID;
 var clockRunning = false;
 var questions = [
     {
-        question : "What is Erin's first name?",
+        question : "1. What is Erin's first name?",
         answers:{
                     a: " Emily ",
                     b: " Kelly ",
@@ -15,25 +15,95 @@ var questions = [
         correctAnswer : " Kelly "
     },
     {
-        question : "What color is the grass?",
+        question : "2. Which restaurant chain was Pam banned from?",
         answers:{
-                    a: " Purple ",
-                    b: " Green ",
-                    c: " Red ",
-                    d: " Blue ",
+                    a: " Outback ",
+                    b: " Chili's ",
+                    c: " On The Border ",
+                    d: " Chick-Fil-A ",
         },
-        correctAnswer : " Green "
+        correctAnswer : " Chili's "
     },
     {
-        question : "What color is an apple?",
+        question : "3. What is printed on Michael's coffee mug?",
         answers: {
-                    a: " Purple ",
-                    b: " Yellow ",
-                    c: " Red ",
-                    d: " Blue ",
+                    a: " Most Beautiful Man ",
+                    b: " Feed Me ",
+                    c: " World's Best Boss ",
+                    d: " I am not a Morning Person ",
         },
-        correctAnswer : " Red "
+        correctAnswer : " World's Best Boss "
     },
+    {
+      question : "4. Who does Angela name her son after?",
+      answers:{
+                  a: " The Senator ",
+                  b: " Dwight ",
+                  c: " Her Cat ",
+                  d: " Her Mom ",
+      },
+      correctAnswer : " Her Cat "
+  },
+  {
+    question : "5. What is the name of the security guard?",
+    answers:{
+                a: " Bill ",
+                b: " Jim ",
+                c: " Paul ",
+                d: " Hank ",
+    },
+    correctAnswer : " Hank "
+},
+{
+  question : "6. Who's car is hit with a watermelon during the safety training episode?",
+  answers:{
+              a: " Stanley ",
+              b: " Kelly ",
+              c: " Jim ",
+              d: " Meredith ",
+  },
+  correctAnswer : " Stanley "
+},
+{
+  question : "7. What is the name of Michael's passion project film?",
+  answers:{
+              a: " Michael Scarn: Goldfinger ",
+              b: " Scarnface ",
+              c: " Threat Level Midnight ",
+              d: " The Scarnfather ",
+  },
+  correctAnswer : " Threat Level Midnight "
+},
+{
+  question : "8. Who wears the face mask while playing in the basketball game?",
+  answers:{
+              a: " Stanley ",
+              b: " Jim ",
+              c: " Darryl ",
+              d: " Dwight ",
+  },
+  correctAnswer : " Dwight "
+},
+{
+  question : "9. What is the name of Andy's college acapella group?",
+  answers:{
+              a: " The Golden Boys ",
+              b: " Here Comes Treble ",
+              c: " The Corny 5 ",
+              d: " Treblemakers ",
+  },
+  correctAnswer : " Here Comes Treble "
+},
+{
+  question : "10. What kind of company does Creed run out of his car?",
+  answers:{
+              a: " Fake-ID Company ",
+              b: " Drug Company ",
+              c: " Blood Donation Company ",
+              d: " Pyramid Scheme ",
+  },
+  correctAnswer : " Fake-ID Company "
+},
 ]
 
 
@@ -45,7 +115,7 @@ function startGame() {
     $(this).hide();
     function buildQuiz() {
 
-      setTimeout(endGame, 31000);
+      setTimeout(endGame, 91000);
       if(!clockRunning){
         intervalID = setInterval(count, 1000);
         clockRunning = true;

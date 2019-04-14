@@ -151,6 +151,7 @@ function startGame() {
           type: 'submit',
           value: 'Submit',
         }));
+        
         $("#form").append(submit);
 
         
@@ -170,73 +171,53 @@ function startGame() {
           var valueQ10 = $("form input[name= 'j']:checked").val();
           
           if (valueQ1 == questions[0].correctAnswer){
-            console.log("a is right");
             correct++
           } else{
-            console.log("a is wrong");
             incorrect++
           }
           if (valueQ2 == questions[1].correctAnswer){
-            console.log("b is right");
             correct++
           } else {
-            console.log("b is wrong");
             incorrect++
           }
           if (valueQ3 == questions[2].correctAnswer){
-            console.log("a is right");
             correct++
           } else{
-            console.log("a is wrong");
             incorrect++
           }
           if (valueQ4 == questions[3].correctAnswer){
-            console.log("a is right");
             correct++
           } else{
-            console.log("a is wrong");
             incorrect++
           }
           if (valueQ5 == questions[4].correctAnswer){
-            console.log("a is right");
             correct++
           } else{
-            console.log("a is wrong");
             incorrect++
           }
           if (valueQ6 == questions[5].correctAnswer){
-            console.log("a is right");
             correct++
           } else{
-            console.log("a is wrong");
             incorrect++
           }
           if (valueQ7 == questions[6].correctAnswer){
-            console.log("a is right");
             correct++
           } else{
-            console.log("a is wrong");
             incorrect++
           }
           if (valueQ8 == questions[7].correctAnswer){
-            console.log("a is right");
             correct++
           } else{
-            console.log("a is wrong");
             incorrect++
           }
           if (valueQ9 == questions[8].correctAnswer){
-            console.log("a is right");
             correct++
           } else{
-            console.log("a is wrong");
             incorrect++
           }
           if (valueQ10 == questions[9].correctAnswer){
-            console.log("a is right");
             correct++
           } else{
-            console.log("a is wrong");
             incorrect++
           }
           var userSubmit = document.getElementsByTagName("form");

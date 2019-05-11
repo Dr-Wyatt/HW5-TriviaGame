@@ -3,6 +3,12 @@
 ## Introduction
 This game was made for the fifth homework for NU Bootcamp
 
+## Problems
+A problem encountered was:
+* How to differentiate radio inputs and the correct answer choice was tied to the correct answer
+    * Each question was assigned a letter based on its location in the array. Ex. Question 1 = a, Question 2 = b etc.
+    * For each question, each answer choice was assigned that questions assigned letter, to ensure more than one answer could not be selected, and to ensure the correct answer choice is recorded for each question.
+
 ## Instructions
 This is a trivia game about the popular tv show, "The Office". Presse the start button to begin.
 You will be given 90 seconds to answer 10 questions.

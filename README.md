@@ -1,7 +1,7 @@
 # HW5-TriviaGame
 
 ## Introduction
-This game was made for the fifth homework for NU Bootcamp
+This game was made for the fifth homework for NU Bootcamp. The assignment was to develop a trivia game that accurately recorded user answers to questions, and displayed a score. 
 
 ## Problems
 A problem encountered was:
